@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+  <title>Invoice Ninja API Spec</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+</head>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const docEl = document.getElementById('thedoc');
+    docEl.addEventListener('before-try', (e) => {
+      e.detail.request.headers.append('AAA-BBB', 'CCC DDDD');
+    });
+  });
+</script>
+
+<body>
+<!-- 
+<rapi-doc 
+  spec-url = "api-docs.json" 
+  id="thedoc" 
+  theme = "dark"
+  render-style="view" 
+  schema-style="table"
+  show-method-in-nav-bar = "true"
+  use-path-in-nav-bar = "true"
+  show-components = "true"
+  show-header = "true"
+  allow-search = "true"  
+  allow-advanced-search = "true"
+  allow-spec-url-load="false"
+  allow-spec-file-download="true"
+  allow-server-selection = "true"
+  allow-authentication	= "true"
+  update-route="false"
+  match-type="regex"
+  persist-auth="true"
+  show-method-in-nav-bar = "as-colored-block"
+  show-header="false" 
+  render-style="focused"
+></rapi-doc>
+-->
+
+
+    <rapi-doc 
+    id = "thedoc" 
+    spec-url="api-docs.json"
+    render-style = "read"
+    load-fonts = "true"
+    show-header = "false"
+    theme = "darkbluenav"
+    show-method-in-nav-bar="as-colored-block"
+    allow-search = "true"  
+    allow-advanced-search = "true"
+    allow-authentication  = "false"
+    regular-font = "Arial"
+    font-size = "large"
+    mono-font = "Monaco"
+    nav-bg-color="#3f4d67"
+    nav-item-spacing = "default"
+    nav-active-item-marker = "left-bar"
+    on-nav-tag-click = "expand-collapse"
+    show-info = "true"
+    info-description-headings-in-navbar = "true"
+    show-curl-before-try = "true"
+    allow-server-selection = "false"
+    default-api-server = "https://demo.invoiceninja.com"
+    
+  > 
+
+    <slot name = "default">
+    <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> default</b> slot | <span style="font-size:12px"> <a href="#tag--vendors">Go To Vendors</a>  </span>
+        </p>
+    </slot>
+
+<x-code-samples>hello</x-code-samples>
+
+    <slot name = "nav-logo">
+    <div slot="nav-logo" style="width:100%; display: flex;justify-content: center;">
+      <img slot="nav-logo" src="https://invoicing.co/images/new_logo.png" style='width:260px'/>
+    </div>
+    </slot>
+
+    <slot name = "overview">
+    <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> overview</b> slot | <span style="font-size:12px"> Good for contents that applies to all authy/api</span>
+        </p>
+
+    <x-code-samples>overview</x-code-samples>
+
+
+    </slot>
+
+    <slot name = "servers">
+    <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> servers</b> slot | <span style="font-size:12px"> Good for contents that applies to all authy/api</span>
+        </p>
+    </slot>
+
+      <slot name="auth">
+        <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> auth</b> slot | <span style="font-size:12px"> Good for contents that applies to all authy/api</span>
+        </p>
+      </slot>
+
+      <span slot="operations-top">
+        <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> overview</b> slot | <span style="font-size:12px"> Good for contents that applies to all operations/api</span>
+
+        </p>
+      </span>
+
+
+
+<span slot="tag--signup">
+  <p>Signup Tag - you can target specific tags and annotate further</p>
+    <span style="margin:1px; margin-right:5px; padding:1px 8px; font-weight:bold; border-radius:12px;  background-color: var(--light-red, var(--input-bg)); color:var(--red); border:1px solid var(--red)"><!--?lit$853026666$-->Beta</span>
+
+    <span style="margin:1px; margin-right:5px; padding:1px 8px; font-weight:bold; border-radius:12px;  background-color: var(--light-blue, var(--input-bg)); color:var(--blue); border:1px solid var(--blue)"><!--?lit$853026666$-->Popular: true</span>
+</span>
+
+      <span slot="footer">
+        <p style="margin-top:10px; padding:16px 36px; background-color:#a5522e; color:#fff; text-align:center;"> 
+          <b> footer</b> slot | <span style="font-size:12px"> Good for contents that applies to all operations/api</span>
+        </p>
+      </span>
+
+
+  </rapi-doc>
+
+
+</body>
+
+</html>
